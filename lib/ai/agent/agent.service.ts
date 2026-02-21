@@ -946,7 +946,7 @@ function isBusinessHours(hours?: { start: string; end: string; timezone: string;
 async function getConversationHistory(
   supabase: SupabaseClient,
   conversationId: string,
-  limit: number = 20
+  limit: number = 10
 ): Promise<Array<{ role: 'user' | 'assistant'; content: string }>> {
   // Fetch most recent messages (DESC) then reverse for chronological order
   const { data: messages } = await supabase
